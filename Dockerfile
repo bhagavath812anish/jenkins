@@ -16,13 +16,15 @@ RUN apt-get install -y sudo gcc \
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 
 RUN git clone -b v2.6.2 https://github.com/git/git.git /usr/local/src/git
+RUN apt-get remove -y git
+
 WORKDIR /usr/local/src/git
 RUN make configure && \
-    ./configure --prefix=/usr && \
+    ./configure --prefix=/usr/local && \
     make && \
     make install
+WORKDIR /var/jenkins_home
 
-RUN apt-get remove -y git
 RUN rm -rf /usr/local/src/git
 RUN rm -rf /var/lib/apt/lists/*
 
