@@ -26,5 +26,7 @@ RUN apt-get remove -y git
 RUN rm -rf /usr/local/src/git
 RUN rm -rf /var/lib/apt/lists/*
 
+USER jenkins
+
 EXPOSE 8080:8080
 EXPOSE 50000:50000
