@@ -28,9 +28,6 @@ WORKDIR /var/jenkins_home
 RUN rm -rf /usr/local/src/git
 RUN rm -rf /var/lib/apt/lists/*
 
-RUN groupadd docker
-RUN gpasswd -a jenkins docker
-
 USER jenkins
 
 EXPOSE 8080:8080
