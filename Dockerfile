@@ -1,4 +1,4 @@
-FROM jenkins:1.625.1
+FROM jenkins:2.7.2
 MAINTAINER tsukasa.tamaru<tsukasa.tamaru@2dfacto.co.jp>
 
 USER root
